@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BookStore.Models;
+using BookStore.Util;
 
 namespace BookStore.Controllers
 {
@@ -38,6 +39,11 @@ namespace BookStore.Controllers
             // сохраняем в бд все изменения
             db.SaveChanges();
             return "Спасибо," + purchase.Person + ", за покупку!";
+        }
+
+        public ActionResult GetHtml()
+        {
+            return new HtmlResult("<h2>Привет мир!</h2>");
         }
     }
 }
